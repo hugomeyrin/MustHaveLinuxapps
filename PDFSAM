@@ -1,0 +1,56 @@
+https://ubunlog.com/fr/combinar-archivos-pdf-ubuntu/
+
+Utilisation de pdfsam
+
+pdfsam est un outil GUI simple, intuitif et facile à utiliser qui est utilisé pour fusionner, diviser, faire pivoter, modifier et signer des documents PDF. Dans cet exemple, nous allons utiliser l'option pour combiner des documents PDF dans Ubuntu 18.04. Mais, premièrement, nous installerons les dépendances nécessaire:
+1
+	
+sudo apt install openjdk-8-jre libopenjfx-jni libopenjfx-java openjfx
+
+Après une installation réussie, nous définirons la variable JAVA_HOME dans le chemin / etc / environment en utilisant notre éditeur préféré.
+1
+	
+vim /etc/environment
+
+À l'intérieur du fichier, nous allons ajouter la ligne suivante:
+1
+	
+JAVA_HOME="/usr/lib/jvm/java-8-openjdk-amd64/"
+
+Après avoir enregistré et quitté, on recharge le fichier édité:
+1
+	
+source /etc/environment
+
+Puis nous téléchargerons le fichier .deb depuis le site officiel à partir de pdfsam :
+
+télécharger pdfsam
+1
+	allez sur votre navifgateur web 
+  
+https://github.com/torakiki/pdfsam/releases/download
+
+Choisir la version la plus récente en clique droit de la  souris et selectionnez copy link 
+
+ouvrez unterminal dans votre ubuntu ou autre 
+distro linux et collez  en adaptant la version sur le site web que vous avez visité.
+  
+wget https://github.com/torakiki/pdfsam/releases/download/xxxx/pdfsam_x.x.xxx_all.deb 
+
+Une fois téléchargé, nous pouvons installez le fichier en utilisant dpkg:
+1
+	
+sudo dpkg -i pdfsam_3.3.6-1_all.deb
+
+pour les démarrer pdfsam, dans un terminal on écrit son nom:
+
+pdfsam fusionne les fichiers pdf
+1
+	
+pdfsam
+
+Lorsque nous voulons combiner des documents, nous cliquons sur «Combiner». Sur l'écran qui s'affichera, vous devrez faire glisser et déposer les fichiers dans la section dédiée à ceux-ci:
+
+fusionner les fichiers pdf boîte sam glisser les fichiers pdf
+
+Si vous en avez besoin, n'hésitez pas à spécifiez d'autres attributs dans la section «Configurer la jointure». La combinaison démarrera lorsque vous cliquerez sur «Exécuter», situé en bas. Un son «ding» nous informera que le processus est terminé.
